@@ -21,6 +21,13 @@ server.register(require('inert'), (err) => {
       reply.file('ui/index.html');
     }
   });
+  server.route({
+    method: 'GET',
+    path: '/{asset}',
+    handler: function (request, reply) {
+      reply.file('ui/' + request.params.asset);
+    }
+  });
 });
 
 // Start the server
