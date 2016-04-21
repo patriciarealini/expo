@@ -1,5 +1,6 @@
 // index.js
 var Hapi = require("hapi");
+var Inert = require("inert");
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -8,7 +9,7 @@ server.connection({
   port: 8000
 });
 
-server.register(require('inert'), (err) => {
+server.register(Inert, (err) => {
 
   if (err) {
       throw err;
@@ -18,14 +19,14 @@ server.register(require('inert'), (err) => {
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-      reply.file('ui/index.html');
+      reply.file('tmp/index.html');
     }
   });
   server.route({
     method: 'GET',
     path: '/{asset}',
     handler: function (request, reply) {
-      reply.file('ui/' + request.params.asset);
+      reply.file('tmp/' + request.params.asset);
     }
   });
 });
