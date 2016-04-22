@@ -5,8 +5,11 @@ const gulpSass = require('gulp-sass');
 const HTMLS = ["ui/index.html"];
 const STYLES = [
   "node_modules/normalize.css/normalize.css",
-  "ui/index.css",
-  "ui/modal.scss"
+  "ui/index.scss",
+  "ui/Header/header.scss",
+  "ui/Modal/modal.scss",
+  "ui/Container/container.scss",
+  "ui/Tickets/tickets.scss"
 ];
 const STYLE = "index.css";
 const DESTINATION = "tmp/";
