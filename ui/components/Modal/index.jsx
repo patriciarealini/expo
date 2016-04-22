@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-export default class Modal extends Component {
+class Modal extends Component {
 
   render () {
 
@@ -16,3 +16,5 @@ export default class Modal extends Component {
     );
   }
 };
+
+export default Modal;
