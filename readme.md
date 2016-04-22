@@ -28,3 +28,4 @@ Run `npm install`
 ## Run
 
 To start your server, run `npm start`.
+Open `localhost:8000` in your browser.
