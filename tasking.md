@@ -28,7 +28,7 @@ Good luck and let us know if you have any questions!
 - Cards to hold the order details.
   - Cards should have a button to mark as completed/picked up. In future iterations I would like to have a button in the nav bar or in the footer that takes you to a display of completed orders.
   - It would be user friendly to provide the pickup ETA with a timer that counts down to that time next to it.
-  - When the ETA time has been passed, tickets could vhange color to red to indicate that they are overdue.
+  - When the ETA time has been passed, tickets could change color to red to indicate that they are overdue.
   - It would be cool to use CSS Transitions to flip the cards to reveal the contents of the order.
 
 #### Things I Need To Learn To Do
@@ -54,6 +54,7 @@ Good luck and let us know if you have any questions!
   - [x] Normalize.css
   - [x] gulp-sass
 - [ ] Mocha
+- [ ] ESLint ?
 
 ## Tasks
 
@@ -82,11 +83,10 @@ Good luck and let us know if you have any questions!
 
 > While introducing modules, I ran into a pair of error messages. `React.createElement: type should not be null, undefined, boolean, or number. It should be a string (for DOM elements) or a ReactClass (for composite components).` & `Invariant Violation: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined.`. [This blog post](https://codereviewvideos.com/blog/warning-react-createelement/) helped me find the solution.
 
-> Now I'm getting a new error message (yay!). `RangeError: Maximum call stack size exceeded`. It could be because I am trying to call `Modal` inside of `Header`. 
+> Now I'm getting a new error message (yay!). `RangeError: Maximum call stack size exceeded`. Not sure why i'm getting an infinite loop error message but the problem was solved by cleaning up the imports and exports which did not properly call modules from their respective homes. (Learned later about cyclical dependency calling).
 
-- [ ] Create a `Header` module & import the `Modal` module into the Header.
-- [ ] Destructure the `Modal` module so that it can be a reusable component.
-- [ ] Create a `Container` module & import the `Tickets` module into the Container.
+- [x] Create a `Header` module & import the `Modal` module into the Header.
+- [x] Create a `Container` module & import the `Tickets` module into the Container.
 - [ ] Work on the `Tickets` module.
   - [ ] Provide tickets with a UI that lists the information.
   - [ ] Provide tickets with a UI that allows for a ticket to be marked as completed.
