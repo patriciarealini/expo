@@ -1,12 +1,14 @@
 import React, {Component} from "react";
+import Radium from "radium";
 
+@Radium
 class Tickets extends Component {
 
   render () {
 
     return (
       <div>
-        <div>
+        <div style={styles.ticket}>
           <h2>Order 0001</h2>
           <p>Customer Name</p>
           <p>Customer Address</p>
@@ -15,6 +17,12 @@ class Tickets extends Component {
         </div>
       </div>
     );
+  }
+};
+
+const styles = {
+  ticket: {
+    
   }
 };
 
