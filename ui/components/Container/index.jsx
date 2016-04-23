@@ -8,7 +8,7 @@ class Container extends Component {
 
     return (
       <div>
-        <section class="order-styles">
+        <section>
         <Tickets />
         </section>
       </div>
