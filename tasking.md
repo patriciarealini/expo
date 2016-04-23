@@ -96,6 +96,11 @@ Good luck and let us know if you have any questions!
 
 > Having trouble with styling. I didn't want to complicate things further and thought i could simply set classes on my jsx html tags. I think I'm going to look into wiring up Radium so i can do inline styles. iteration is 🆒.
 
+- [x] Install Radium
+
+> Getting `unexpected token` error for the use of a decorator with Radium. Apparently Babel 6 took out ES7 decorators. Considering [transform-decorators-legacy](https://www.npmjs.com/package/babel-plugin-transform-decorators-legacy).
+
+- [x] Install babel-plugin-transform-decorators-legacy so i can use decorators with Radium.
 - [ ] Work on the `Tickets` module.
   - [ ] Provide tickets with a UI that lists the information.
   - [ ] Provide tickets with a UI that allows for a ticket to be marked as completed.
