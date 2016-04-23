@@ -53,10 +53,13 @@ Good luck and let us know if you have any questions!
 - [x] Gulp
   - [x] Normalize.css
   - [x] gulp-sass
+- [ ] Radium
 - [ ] Mocha
 - [ ] ESLint ?
 
 ## Tasks
+
+> Any issues I run into that block me will be included in my tasks as blockquotes; just like this one.
 
 - [x] Create raw index.html viewable in the browser.
 - [x] Set up Hapi to serve `index.html` at the request of a browser.
@@ -87,6 +90,9 @@ Good luck and let us know if you have any questions!
 
 - [x] Create a `Header` module & import the `Modal` module into the Header.
 - [x] Create a `Container` module & import the `Tickets` module into the Container.
+
+> Having trouble with styling. I didn't want to complicate things further and thought i could simply set classes on my jsx html tags. I think I'm going to look into wiring up Radium so i can do inline styles. iteration is 🆒.
+
 - [ ] Work on the `Tickets` module.
   - [ ] Provide tickets with a UI that lists the information.
   - [ ] Provide tickets with a UI that allows for a ticket to be marked as completed.
