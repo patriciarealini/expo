@@ -6,7 +6,7 @@ class Tickets extends Component {
 
     return (
       <div>
-        <div class="ticket-styles">
+        <div>
           <h2>Order 0001</h2>
           <p>Customer Name</p>
           <p>Customer Address</p>

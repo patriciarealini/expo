@@ -7,7 +7,7 @@ class Header extends Component {
   render () {
 
     return (
-      <div class="header-content">
+      <div>
         <h1>Ando!</h1>
         <Modal />
       </div>
