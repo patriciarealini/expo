@@ -47,14 +47,18 @@ Good luck and let us know if you have any questions!
 - [x] Hapi
 - [x] React
 - [ ] Redux (installed)
-- [x] Browserify
-  - [x] Babel + Babelify
-  - [x] Babel Presets React + ES2015
+- [x] Babel
+  - [x] Browserify
+  - [x] Babelify
+  - [x] Babel Preset React
+  - [x] Babel Preset ES2015
 - [x] Gulp
   - [x] Normalize.css
   - [x] gulp-sass
-- [ ] Radium (installed)
-- [ ] Mocha
+- [x] Radium
+- [x] Mocha
+  - [x] Chai
+  - [x] Babel-Register (Dev Dependency)
 - [ ] ESLint ?
 
 > Because I haven't put together my own build before (but i've been learning about how to do it and excited i get to finally do it) I decided to put together a [boilerplate build](https://github.com/patriciarealini/jsboilerplate) alongside my work for this project. This way I can implement this work in this future on my other personal projects 🎉.  
@@ -101,6 +105,8 @@ Good luck and let us know if you have any questions!
 > Getting `unexpected token` error for the use of a decorator with Radium. Apparently Babel 6 took out ES7 decorators. Considering [transform-decorators-legacy](https://www.npmjs.com/package/babel-plugin-transform-decorators-legacy).
 
 - [x] Install babel-plugin-transform-decorators-legacy so i can use decorators with Radium.
+- [x] Install Mocha Chai
+
 - [ ] Work on the `Tickets` module.
   - [ ] Provide tickets with a UI that lists the information.
   - [ ] Provide tickets with a UI that allows for a ticket to be marked as completed.
