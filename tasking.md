@@ -38,7 +38,7 @@ Good luck and let us know if you have any questions!
 - Plugging in Babel.
 - Setting up Redux. My experience with Redux has been adding connect to components and accessing state to populate a UI, but i've never built the state or plugged in Redux before.
 - Dummy Databases (where do i store the data for the orders? Firebase with API calls?) (JSON object full of data and on app start up initialize function to populate with data?).
-- Auto generating cards every 15 seconds (ala Ruby - "rake" task every 15 seconds).
+- Auto generating cards every 15 seconds `setInterval(function, timeInMillisecondsInteger)`.
 
 
 ## Set Up The Stack
@@ -106,6 +106,8 @@ Good luck and let us know if you have any questions!
 
 - [x] Install babel-plugin-transform-decorators-legacy so i can use decorators with Radium.
 - [x] Install Mocha Chai
+
+> While working on the Tickets component, in order use `static` for PropTypes I need to install `babel-plugin-transform-class-properties`.
 
 - [ ] Work on the `Tickets` module.
   - [ ] Provide tickets with a UI that lists the information.
