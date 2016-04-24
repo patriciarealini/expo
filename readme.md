@@ -25,7 +25,12 @@ Good luck and let us know if you have any questions!
 
 Run `npm install`
 
-## Run
+## Run Development
 
-To start your server, run `npm start`.
+Run `npm run watch`.
+Open `localhost:8000` in your browser.
+
+## Run Production
+
+Run `npm start`.
 Open `localhost:8000` in your browser.
