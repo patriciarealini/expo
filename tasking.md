@@ -66,6 +66,9 @@ Good luck and let us know if you have any questions!
   - [x] eslint-plugin-babel
   - [x] babel-eslint
   - [x] eslint-plugin-react
+- [x] Watchify
+  - [x] Chokidar
+  - [x] npm run all
 
 > Because I haven't put together my own build before (but i've been learning about how to do it and excited i get to finally do it) I decided to put together a [boilerplate build](https://github.com/patriciarealini/jsboilerplate) alongside my work for this project. This way I can implement this work in this future on my other personal projects 🎉.  
 
