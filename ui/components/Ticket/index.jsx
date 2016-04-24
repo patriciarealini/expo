@@ -1,6 +1,14 @@
 import React, {Component, PropTypes} from "react"
 import Radium from "radium"
 
+const styles = {
+  ticket: {
+    flex: 1,
+    width: "90%",
+    border: "1px solid black"
+  }
+}
+
 @Radium
 class Ticket extends Component {
 
@@ -13,7 +21,6 @@ class Ticket extends Component {
   }
 
   render () {
-
     return (
       <div>
         <div style={styles.ticket}>
@@ -25,12 +32,6 @@ class Ticket extends Component {
         </div>
       </div>
     )
-  }
-}
-
-const styles = {
-  ticket: {
-    border: "10px solid firebrick"
   }
 }
 
