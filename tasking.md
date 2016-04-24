@@ -111,6 +111,7 @@ Good luck and let us know if you have any questions!
 
 - [x] Provide ticket with a UI that lists the information.
 - [x] Provide Ticket with props from Expo.
+- [ ] Generate a number of tickets from a list in the Expo component. 
 - [ ] Provide ticket with a UI that allows for a ticket to be marked as completed.
 - [ ]
 - [ ]
