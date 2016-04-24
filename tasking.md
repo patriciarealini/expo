@@ -22,9 +22,9 @@ Good luck and let us know if you have any questions!
 #### Breaking Down the Problem
 
 - A header with a Help button, that when clicked reveals a modal.
-- Container to hold the "cards".
+- Expo to hold the "tickets".
   - To emulate an expo's expectations for the layout of tickets, tickets should be presented in a row. The queue will begin on the left hand side of the screen and come in on the right hand side of the screen. Scrolling will be horizontal & a button to the far left should automatically scroll to the top of the queue.
-  - The container should display a partial ticket on the far end so that the user develops an expectation that there are more tickets out of the view and that to access them they can scroll horizontally.
+  - The Expo should display a partial ticket on the far end so that the user develops an expectation that there are more tickets out of the view and that to access them they can scroll horizontally.
 - Cards to hold the order details.
   - Cards should have a button to mark as completed/picked up. In future iterations I would like to have a button in the nav bar or in the footer that takes you to a display of completed orders.
   - It would be user friendly to provide the pickup ETA with a timer that counts down to that time next to it.
@@ -96,7 +96,7 @@ Good luck and let us know if you have any questions!
 > Now I'm getting a new error message (yay!). `RangeError: Maximum call stack size exceeded`. Not sure why i'm getting an infinite loop error message but the problem was solved by cleaning up the imports and exports which did not properly call modules from their respective homes. (Learned later about cyclical dependency calling).
 
 - [x] Create a `Header` module & import the `Modal` module into the Header.
-- [x] Create a `Container` module & import the `Tickets` module into the Container.
+- [x] Create a `Expo` module & import the `Tickets` module into the Expo.
 
 > Having trouble with styling. I didn't want to complicate things further and thought i could simply set classes on my jsx html tags. I think I'm going to look into wiring up Radium so i can do inline styles. iteration is 🆒.
 
@@ -107,11 +107,11 @@ Good luck and let us know if you have any questions!
 - [x] Install babel-plugin-transform-decorators-legacy so i can use decorators with Radium.
 - [x] Install Mocha Chai
 
-> While working on the Tickets component, in order use `static` for PropTypes I need to install `babel-plugin-transform-class-properties`.
+> While working on the Ticket component, in order use `static` for PropTypes I need to install `babel-plugin-transform-class-properties`.
 
-- [ ] Work on the `Tickets` module.
-  - [ ] Provide tickets with a UI that lists the information.
-  - [ ] Provide tickets with a UI that allows for a ticket to be marked as completed.
+- [x] Provide ticket with a UI that lists the information.
+- [x] Provide Ticket with props from Expo.
+- [ ] Provide ticket with a UI that allows for a ticket to be marked as completed.
 - [ ]
 - [ ]
 - [ ]

@@ -1,27 +1,39 @@
-import React, {Component} from "react";
-import Radium from "radium";
+import React, {Component} from "react"
+import Radium from "radium"
 
-import {Tickets} from "../index.jsx";
+import Ticket from "../Ticket/index.jsx"
 
 @Radium
-class Container extends Component {
+class Expo extends Component {
+
+  renderTicket () {
+
+    return (
+      <Ticket
+        courierETA={new Date()}
+        courierName={"Mr. Messenger Bag"}
+        customerAddress={"123 Prince St., New York, NY 10001"}
+        customerName={"Prince"}
+        orderNumber={1} />
+    )
+  }
 
   render () {
 
     return (
       <div>
-        <section style={styles.orderContainer}>
-        <Tickets />
+        <section style={styles.expo}>
+          {this.renderTicket()}
         </section>
       </div>
-    );
+    )
   }
-};
+}
 
 const styles = {
-  orderContainer: {
-    
-  }
-};
+  expo: {
 
-export default Container;
+  }
+}
+
+export default Expo

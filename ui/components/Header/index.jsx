@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Radium from "radium";
 
-import {Modal} from "../index.jsx";
+import Modal from "../Modal/index.jsx";
 
 @Radium
 class Header extends Component {

@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import {Header, Container} from "./components/index.jsx";
+import {Header, Expo} from "./components/index.jsx";
 
 ReactDOM.render(
   <div>
     <Header />
-    <Container />
+    <Expo />
   </div>,
   document.getElementById('ando')
 );

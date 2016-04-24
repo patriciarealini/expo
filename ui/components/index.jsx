@@ -1,13 +1,13 @@
 import React from "react";
 
-import Container from "./Container/index.jsx"
+import Expo from "./Expo/index.jsx"
 import Header from "./Header/index.jsx"
 import Modal from "./Modal/index.jsx"
-import Tickets from "./Container/Tickets/index.jsx"
+import Ticket from "./Ticket/index.jsx"
 
 export {
-  Container,
+  Expo,
   Header,
   Modal,
-  Tickets
+  Ticket
 }
