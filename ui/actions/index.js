@@ -1,5 +1,4 @@
 export function getAllTickets () {
-
   return {
     type: "RECEIVE_TICKETS",
     tickets: {
@@ -12,6 +11,7 @@ export function getAllTickets () {
         orderNumber: 1
       },
       2: {
+        completed: false,
         courierETA: new Date(),
         courierName: "Courier 2",
         customerAddress: "Customer Address 2",
@@ -19,6 +19,7 @@ export function getAllTickets () {
         orderNumber: 2
       },
       3: {
+        completed: false,
         courierETA: new Date(),
         courierName: "Courier 3",
         customerAddress: "Customer Address 3",
@@ -26,6 +27,7 @@ export function getAllTickets () {
         orderNumber: 3
       },
       4: {
+        completed: false,
         courierETA: new Date(),
         courierName: "Courier 4",
         customerAddress: "Customer Address 4",
@@ -33,5 +35,11 @@ export function getAllTickets () {
         orderNumber: 4
       }
     }
+  }
+}
+export function markTicketCompleted (id) {
+  return {
+    type: "MARK_TICKET_COMPLETED",
+    id
   }
 }
