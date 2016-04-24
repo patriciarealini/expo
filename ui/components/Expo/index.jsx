@@ -11,7 +11,7 @@ const styles = {
   }
 }
 
-const renderTicket = (ticket, dispatch) => {
+const renderTicket = (dispatch) => (ticket) => {
   return (
     <Ticket
       dispatch={dispatch}
@@ -26,7 +26,7 @@ const renderTicket = (ticket, dispatch) => {
 }
 
 const renderTickets = (tickets, dispatch) => {
-  return tickets.map(renderTicket)
+  return tickets.map(renderTicket(dispatch))
 }
 
 @Radium
