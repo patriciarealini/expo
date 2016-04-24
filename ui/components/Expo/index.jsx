@@ -11,54 +11,57 @@ const styles = {
   }
 }
 
+const renderTicket = (ticket, dispatch) => {
+  return (
+    <Ticket
+      dispatch={dispatch}
+      key={ticket.orderNumber}
+      completed={ticket.completed}
+      courierETA={ticket.courierETA}
+      courierName={ticket.courierName}
+      customerAddress={ticket.customerAddress}
+      customerName={ticket.customerName}
+      orderNumber={ticket.orderNumber} />
+  )
+}
+
+const renderTickets = (tickets, dispatch) => {
+  return tickets.map(renderTicket)
+}
+
 @Radium
 @connect((state) => {
   const isCompleted = whereEq({completed: true})
-  const inTheQueue = whereEq({completed: false})
-  const onlyQueue = filter(inTheQueue)
+  const isQueued = whereEq({completed: false})
+  const onlyQueue = filter(isQueued)
   const onlyCompleted = filter(isCompleted)
 
   return {
-    tickets: onlyQueue(values(state.tickets)),
-    ticketsCompleted: onlyCompleted(values(state.tickets))
+    queued: onlyQueue(values(state.tickets)),
+    completed: onlyCompleted(values(state.tickets))
   }
 })
 class Expo extends Component {
 
   static propTypes = {
-    tickets: PropTypes.array.isRequired,
-    ticketsCompleted: PropTypes.array.isRequired
+    dispatch: PropTypes.func.isRequired,
+    queued: PropTypes.array.isRequired,
+    completed: PropTypes.array.isRequired
   }
 
   static defaultProps = {
-    tickets: [],
-    ticketsCompleted: []
-  }
-
-  renderTicket (ticket) {
-    return (
-      <Ticket
-        key={ticket.orderNumber}
-        courierETA={ticket.courierETA}
-        courierName={ticket.courierName}
-        customerAddress={ticket.customerAddress}
-        customerName={ticket.customerName}
-        orderNumber={ticket.orderNumber} />
-    )
-  }
-
-  renderTickets (tickets) {
-    return tickets.map(this.renderTicket)
+    queued: [],
+    completed: []
   }
 
   render () {
     return (
       <div>
         <section style={styles.expo}>
-          {this.renderTickets(this.props.tickets)}
+          {renderTickets(this.props.queued, this.props.dispatch)}
         </section>
         <section style={styles.expo}>
-          {this.renderTickets(this.props.ticketsCompleted)}
+          {renderTickets(this.props.completed, this.props.dispatch)}
         </section>
       </div>
     )
