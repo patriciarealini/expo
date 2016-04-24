@@ -23,8 +23,8 @@ Good luck and let us know if you have any questions!
 
 - A header with a Help button, that when clicked reveals a modal.
 - Expo to hold the "tickets".
-  - To emulate an expo's expectations for the layout of tickets, tickets should be presented in a row. The queue will begin on the left hand side of the screen and come in on the right hand side of the screen. Scrolling will be horizontal & a button to the far left should automatically scroll to the top of the queue.
-  - The Expo should display a partial ticket on the far end so that the user develops an expectation that there are more tickets out of the view and that to access them they can scroll horizontally.
+  - To emulate an expo's expectations for the layout of tickets, tickets should be presented in a row. The queue will begin on the left hand side of the screen and come in on the right hand side of the screen. ~Scrolling will be horizontal & a button to the far left should automatically scroll to the top of the queue.~
+  - ~The Expo should display a partial ticket on the far end so that the user develops an expectation that there are more tickets out of the view and that to access them they can scroll horizontally.~
 - Cards to hold the order details.
   - Cards should have a button to mark as completed/picked up. In future iterations I would like to have a button in the nav bar or in the footer that takes you to a display of completed orders.
   - It would be user friendly to provide the pickup ETA with a timer that counts down to that time next to it.
@@ -44,22 +44,27 @@ Good luck and let us know if you have any questions!
 ## Set Up The Stack
 
 - [x] Node v5.10.1
-- [x] Hapi
+  - [x] Hapi
 - [x] React
-- [ ] Redux (installed)
+  - [x] Babel Preset React
+  - [x] Babel Preset ES2015
+  - [x] Babel Plugin "transform-class-properties" (for static)
+- [x] Redux
+  - [x] Babel Plugin "transform-object-rest-spread" (for spread operators)
 - [x] Babel
   - [x] Browserify
   - [x] Babelify
-  - [x] Babel Preset React
-  - [x] Babel Preset ES2015
 - [x] Gulp
   - [x] Normalize.css
   - [x] gulp-sass
 - [x] Radium
+  - [x] Babel plugin "transform-decorators-legacy" (for decorators)
 - [x] Mocha
   - [x] Chai
   - [x] Babel-Register (Dev Dependency)
-- [ ] ESLint ?
+- [x] ESLint
+  - [x] eslint-plugin-babel
+  - [x] babel-eslint
 
 > Because I haven't put together my own build before (but i've been learning about how to do it and excited i get to finally do it) I decided to put together a [boilerplate build](https://github.com/patriciarealini/jsboilerplate) alongside my work for this project. This way I can implement this work in this future on my other personal projects 🎉.  
 
@@ -111,11 +116,40 @@ Good luck and let us know if you have any questions!
 
 - [x] Provide ticket with a UI that lists the information.
 - [x] Provide Ticket with props from Expo.
-- [ ] Generate a number of tickets from a list in the Expo component. 
+- [x] Generate a number of tickets from a list in the Expo component.
+- [x] Set up redux in the root javascript file with Providers and createStore.
+- [x] Replace array data source with a redux source
+- [x] Insert new data to the redux source
+
+> Got an unexpected token error because I used a spread operator in reducers. Install `babel-plugin-transform-object-rest-spread` in order to have access to spread operators.
+
+> I know I should have installed ESLint sooner but I put it off because I wanted to actually start working on the UI. But I'm doing it now (please don't hurt me 😬).
+
+- [x] Install ESLint & babel plugins.
+- [x] Write a script for eslint so i can just run `npm run lint`.
+- [x] Turn tickets into a nested object where the keys are IDs, instead of an array of objects.
+- [x] Install ESLint plugin for React & JSX. `npm install eslint-plugin-react --save-dev`
+
+> In order to map our tickets state object in the Expo component, it needs to be inside of an array (which was how it was structured to begin with however turning tickets into a nested object means we can sort the object by it's keys.) I was advised that the `values` functions in Ramda will solve this problem
+
+- [x] Install Ramda.
+- [x] Import `values` from Ramda
+
+> (Why I installed watchify)
+
+- [x] Install watchify, chokidar & npm run all
+- [x] Set up a new set of scripts for watching builds
+- [x] Create a watch task in gulp
+
+> Moving tickets that are in the queue, into a completed list. This collection of completed tickets is a result of a computed function, filtering out tickets where completed is false.
+
 - [ ] Provide ticket with a UI that allows for a ticket to be marked as completed.
+  - [ ] Change connector to give access to two collections: queue & completed.
+  - [ ] Use Ramda's filter function to create the queue & completed values.
+  - [ ] Display the completed values in a new component.
 - [ ]
-- [ ]
-- [ ]
+- [ ] Modal
+- [ ] Past Tickets
 - [ ]
 - [ ]
 - [ ]
