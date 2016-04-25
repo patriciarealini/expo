@@ -65,7 +65,7 @@ class Expo extends Component {
   render () {
     return (
       <div>
-        <Header dispatch={this.props.dispatch} />
+        <Header dispatch={this.props.dispatch} open={false} />
         <section style={styles.expo}>
           {renderTickets(this.props.tickets, this.props.dispatch)}
         </section>
