@@ -1,8 +1,8 @@
 import {combineReducers} from "redux"
 
-const initalState = {}
+const initialState = {}
 
-function tickets (state = initalState, action) {
+function tickets (state = initialState, action) {
   switch (action.type) {
     case "RECEIVE_TICKETS": {
       return {
@@ -24,7 +24,7 @@ function tickets (state = initalState, action) {
     }
   }
 }
-function session (state = initalState, action) {
+function session (state = initialState, action) {
   switch (action.type) {
     case "VIEW_COMPLETED": {
       return {
