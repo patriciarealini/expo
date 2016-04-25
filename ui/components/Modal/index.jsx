@@ -1,11 +1,14 @@
-import React, {Component} from "react";
-import Radium from "radium";
+import React, {Component} from "react"
+import Radium from "radium"
+
+const styles = {
+  button: {}
+}
 
 @Radium
 class Modal extends Component {
 
   render () {
-
     return (
       <div>
         <h1>Help!</h1>
@@ -15,12 +18,8 @@ class Modal extends Component {
           <button style={styles.button}>No</button>
         </div>
       </div>
-    );
+    )
   }
-};
+}
 
-const styles = {
-  button: {}
-};
-
-export default Modal;
+export default Modal
