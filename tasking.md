@@ -187,11 +187,16 @@ Good luck and let us know if you have any questions!
 - [ ] Display Modal when `open: true`
 
 - [ ] Modal
+- [ ] TESTS
 - [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth.
+- [ ] TESTS
 - [ ] Auto Generating Tickets
+- [ ] TESTS
 - [ ] ETA Time
+- [ ] TESTS
 - [ ] Order Number concatenation
 - [ ] TESTS
+
 
 ## Assets I Could Use
 
