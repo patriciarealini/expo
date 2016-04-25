@@ -3,7 +3,7 @@ import {connect} from "react-redux"
 import Radium from "radium"
 
 import {viewCompleted, viewQueued, openModal} from "../../actions/index.js"
-// import Modal from "../Modal/index.jsx"
+// import Modal from "./modal.jsx"
 
 const styles = {
   header: {

@@ -180,10 +180,11 @@ Good luck and let us know if you have any questions!
 - [x] Layout the ticket information.
 - [x] Create a simple jagged edge on the tickets so that they have a torn receipt paper nostalgia to them.
 - [x] Add white borders to the ticket info so that it is easier to visually locate the necessary information
-- [x] create a new set of actions to openModal & closeModal.
-- [x] create a new reducer to listen for openModal & closeModal and change state.help.open based on the action.
-- [x] create a new connect switch statement to handle changing state.help.open from false to true when clicking the Help button in the Header.
-- [x] set up the No button in the modal to handle changing state.help.open to false
+- [x] Create a new set of actions to openModal & closeModal.
+- [x] Create a new reducer to listen for openModal & closeModal and change state.help.open based on the action.
+- [x] Create a new connect switch statement to handle changing state.help.open from false to true when clicking the Help button in the Header.
+- [x] Set up the No button in the modal to handle changing state.help.open to false
+- [ ] Display Modal when `open: true`
 
 - [ ] Modal
 - [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth.
