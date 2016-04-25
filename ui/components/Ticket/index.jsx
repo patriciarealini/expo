@@ -4,11 +4,20 @@ import Radium from "radium"
 import {markTicketCompleted} from "../../actions/index.js"
 
 const styles = {
+  pickUpButton: {
+
+  },
   ticket: {
-    flex: 1,
-    width: "90%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "200px",
     border: "1px solid black"
   }
+}
+
+const onClickCompleted = (dispatch, orderNumber) => () => {
+  dispatch(markTicketCompleted(orderNumber))
 }
 
 @Radium
@@ -24,8 +33,15 @@ class Ticket extends Component {
     orderNumber: PropTypes.number.isRequired
   }
 
-  onClickCompleted () {
-    this.props.dispatch(markTicketCompleted(this.props.orderNumber))
+  renderPickUpButton () {
+    if (!this.props.completed) {
+      return (
+        <button onClick={onClickCompleted(this.props.dispatch, this.props.orderNumber)} style={styles.pickUpButton}>
+          Picked Up
+        </button>
+      )
+    }
+    return null
   }
 
   render () {
@@ -37,7 +53,7 @@ class Ticket extends Component {
           <p>Address: {this.props.customerAddress}</p>
           <p>Courier: {this.props.courierName}</p>
           <p>Courier ETA: {this.props.courierETA.toISOString()}</p>
-          <button onClick={this.onClickCompleted}>Pick Up(add if statement)</button>
+          {this.renderPickUpButton()}
         </div>
       </div>
     )
