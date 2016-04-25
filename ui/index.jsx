@@ -1,19 +1,20 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import {Provider} from "react-redux"
-import {createStore} from "redux"
+import {applyMiddleware, createStore} from "redux"
+import createLogger from "redux-logger"
 
 import {getAllTickets} from "./actions/index.js"
 import reducers from "./reducers/index.js"
-import {Header, Expo} from "./components/index.jsx"
+import {Expo} from "./components/index.jsx"
 
-const store = createStore(reducers)
+const logger = createLogger()
+const store = createStore(reducers, applyMiddleware(logger))
 
 store.dispatch(getAllTickets())
 
 ReactDOM.render(
   <div>
-    <Header />
     <Provider store={store}>
       <Expo dispatch={store.dispatch}/>
     </Provider>
