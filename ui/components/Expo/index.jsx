@@ -4,6 +4,7 @@ import {filter, values, whereEq} from "ramda"
 import Radium from "radium"
 
 import Ticket from "../Ticket/index.jsx"
+import Header from "../Header/index.jsx"
 
 const styles = {
   expo: {
@@ -33,35 +34,40 @@ const renderTickets = (tickets, dispatch) => {
 @connect((state) => {
   const isCompleted = whereEq({completed: true})
   const isQueued = whereEq({completed: false})
-  const onlyQueue = filter(isQueued)
+  const onlyQueued = filter(isQueued)
   const onlyCompleted = filter(isCompleted)
 
-  return {
-    queued: onlyQueue(values(state.tickets)),
-    completed: onlyCompleted(values(state.tickets))
+  switch (state.session.view) {
+    case "completed": {
+      return {
+        tickets: onlyCompleted(values(state.tickets))
+      }
+    }
+    case "queued":
+    default: {
+      return {
+        tickets: onlyQueued(values(state.tickets))
+      }
+    }
   }
 })
 class Expo extends Component {
 
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    queued: PropTypes.array.isRequired,
-    completed: PropTypes.array.isRequired
+    tickets: PropTypes.array.isRequired
   }
 
   static defaultProps = {
-    queued: [],
-    completed: []
+    tickets: []
   }
 
   render () {
     return (
       <div>
+        <Header dispatch={this.props.dispatch} />
         <section style={styles.expo}>
-          {renderTickets(this.props.queued, this.props.dispatch)}
-        </section>
-        <section style={styles.expo}>
-          {renderTickets(this.props.completed, this.props.dispatch)}
+          {renderTickets(this.props.tickets, this.props.dispatch)}
         </section>
       </div>
     )
