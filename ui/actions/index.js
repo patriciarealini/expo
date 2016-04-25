@@ -6,7 +6,7 @@ export function getAllTickets () {
         completed: false,
         courierETA: new Date(),
         courierName: "Ruth Reichl",
-        customerAddress: "80 Spring St New York, NY 10012",
+        customerAddress: "80 Spring St., New York, NY 10012",
         customerName: "Keith McNally",
         orderNumber: 1
       },
@@ -22,7 +22,7 @@ export function getAllTickets () {
         completed: false,
         courierETA: new Date(),
         courierName: "John L. Hess",
-        customerAddress: "11 Madison Ave, New York, NY 10010",
+        customerAddress: "11 Madison Ave., New York, NY 10010",
         customerName: "Daniel Humm",
         orderNumber: 3
       },
@@ -30,7 +30,7 @@ export function getAllTickets () {
         completed: false,
         courierETA: new Date(),
         courierName: "Bryan Miller",
-        customerAddress: "10 Columbus Cir, New York, NY 10019",
+        customerAddress: "10 Columbus Cir., New York, NY 10019",
         customerName: "Thomas Keller",
         orderNumber: 4
       },
@@ -46,7 +46,7 @@ export function getAllTickets () {
         completed: false,
         courierETA: new Date(),
         courierName: "Craig Claiborne",
-        customerAddress: "179 E Houston St, New York, NY 10002",
+        customerAddress: "179 E Houston St., New York, NY 10002",
         customerName: "Joel Russ",
         orderNumber: 6
       },
@@ -54,7 +54,7 @@ export function getAllTickets () {
         completed: false,
         courierETA: new Date(),
         courierName: "Frank Bruni",
-        customerAddress: "54 East 1st St, New York, NY 10003",
+        customerAddress: "54 East 1st St., New York, NY 10003",
         customerName: "Gabrielle Hamilton",
         orderNumber: 7
       },
@@ -62,7 +62,7 @@ export function getAllTickets () {
         completed: false,
         courierETA: new Date(),
         courierName: "Mimi Sheraton",
-        customerAddress: "60 E 65th St, New York, NY 10065",
+        customerAddress: "60 E 65th St., New York, NY 10065",
         customerName: "Daniel Boulud",
         orderNumber: 8
       },
@@ -70,7 +70,7 @@ export function getAllTickets () {
         completed: false,
         courierETA: new Date(),
         courierName: "William Grimes",
-        customerAddress: "43 E 19th St, New York, NY 10003",
+        customerAddress: "43 E 19th St., New York, NY 10003",
         customerName: "Tom Colicchio",
         orderNumber: 9
       },
@@ -78,7 +78,7 @@ export function getAllTickets () {
         completed: false,
         courierETA: new Date(),
         courierName: "Sam Sifton",
-        customerAddress: "382 Metropolitan Ave, Brooklyn, NY 11211",
+        customerAddress: "382 Metropolitan Ave., Brooklyn, NY 11211",
         customerName: "Christina Tosi",
         orderNumber: 10
       }
