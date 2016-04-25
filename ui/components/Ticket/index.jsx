@@ -15,7 +15,7 @@ const styles = {
     backgroundColor: "#FFDF0F",
     border: "4px white",
     borderStyle: "dotted solid",
-    margin: "10px",
+    margin: "10px 5px",
     paddingTop: 30
   },
   order: {
