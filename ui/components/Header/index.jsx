@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from "react"
 import {connect} from "react-redux"
 import Radium from "radium"
 
-import {viewCompleted, viewQueued} from "../../actions/index.js"
+import {viewCompleted, viewQueued, openModal} from "../../actions/index.js"
 // import Modal from "../Modal/index.jsx"
 
 const styles = {
@@ -52,23 +52,44 @@ const toggleView = (view, dispatch) => {
 
 @Radium
 @connect((state) => {
-  return {
-    view: state.session.view
+  switch (state.help.open) {
+    case "true": {
+      return {
+        open: state.help.open === true,
+        view: state.session.view
+      }
+    }
+    case "false":
+    default: {
+      return {
+        open: state.help.open === false,
+        view: state.session.view
+      }
+    }
   }
 })
 class Header extends Component {
 
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
+    open: PropTypes.bool.isRequired,
     view: PropTypes.string
   }
+
+  // renderModal () {
+  //   return (
+  //     <Modal dispatch={this.props.dispatch} open={this.props.open}/>
+  //   )
+  // }
 
   render () {
     return (
       <div style={styles.header}>
         <h1 style={styles.heading}>Ando Expo</h1>
         {toggleView(this.props.view, this.props.dispatch)}
-        <button style={styles.button}>Help!</button>
+        <button onClick={onClickChangeView(openModal, this.props.dispatch)} style={styles.button}>
+          Help!
+        </button>
       </div>
     )
   }
