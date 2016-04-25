@@ -1,6 +1,6 @@
-const gulp = require('gulp')
-const gulpConcat = require('gulp-concat')
-const gulpSass = require('gulp-sass')
+const gulp = require("gulp")
+const gulpConcat = require("gulp-concat")
+const gulpSass = require("gulp-sass")
 
 const HTMLS = ["ui/index.html"]
 const STYLES = [
@@ -10,14 +10,14 @@ const STYLES = [
 const STYLE = "index.css"
 const DESTINATION = "tmp/"
 
-gulp.task("styles", function() {
+gulp.task("styles", () => {
   return gulp.src(STYLES)
   .pipe(gulpConcat(STYLE))
-  .pipe(gulpSass().on('error', gulpSass.logError))
+  .pipe(gulpSass().on("error", gulpSass.logError))
   .pipe(gulp.dest(DESTINATION))
 })
 
-gulp.task("htmls", function() {
+gulp.task("htmls", () => {
   return gulp.src(HTMLS)
   .pipe(gulp.dest(DESTINATION))
 })
@@ -27,4 +27,4 @@ gulp.task("watch", ["styles", "htmls"], () => {
   gulp.watch(HTMLS, ["htmls"])
 })
 
-gulp.task('default', ["styles", "htmls"])
+gulp.task("default", ["styles", "htmls"])
