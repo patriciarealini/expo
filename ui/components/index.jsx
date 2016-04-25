@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 import Expo from "./Expo/index.jsx"
 import Header from "./Header/index.jsx"
