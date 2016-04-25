@@ -23,22 +23,24 @@ Good luck and let us know if you have any questions!
 
 - A header with a Help button, that when clicked reveals a modal.
 - Expo to hold the "tickets".
-  - To emulate an expo's expectations for the layout of tickets, tickets should be presented in a row. The queue will begin on the left hand side of the screen and come in on the right hand side of the screen. ~Scrolling will be horizontal & a button to the far left should automatically scroll to the top of the queue.~
-  - ~The Expo should display a partial ticket on the far end so that the user develops an expectation that there are more tickets out of the view and that to access them they can scroll horizontally.~
+  - To emulate an expo's expectations for the layout of tickets, tickets should be presented in a row. The queue will begin on the left hand side of the screen and come in on the right hand side of the screen.
+  - The Expo should display a partial ticket on the far end so that the user develops an expectation that there are more tickets out of the view and that to access them they can scroll horizontally.
+  - In the future, I think it would be interesting to a/b test a layout where the second to last ticket becomes a "stack" of tickets when there are more tickets than the screen has space to display. When an expediter would like to view the full set of tickets, they can tap on the bottom edge of the stack of tickets and the tickets will spread out and the screen will be scrollable.
+  - I am also concerned about what kind of visual cue can be set up to alert the expediter that there is a new ticket. Perhaps have new tickets glow a certain color and then fade into the main color for a span of 2 seconds.
 - Cards to hold the order details.
   - Cards should have a button to mark as completed/picked up. In future iterations I would like to have a button in the nav bar or in the footer that takes you to a display of completed orders.
-  - It would be user friendly to provide the pickup ETA with a timer that counts down to that time next to it.
-  - When the ETA time has been passed, tickets could change color to red to indicate that they are overdue.
-  - It would be cool to use CSS Transitions to flip the cards to reveal the contents of the order.
+  - It would be user friendly to provide the pickup ETA with a timer that counts down to that time next to it. This is something I would definitely want to implement in the future.
+  - Additionally, it would be clever to change the background color of tickets to red to indicate when they are overdue.
+  - It would be cool to use CSS Transitions or some animation to flip the cards to reveal the contents of the order.
 
 #### Things I Need To Learn To Do
 
-- Gulp, writing a gulpfile and properly concatenating my files together.
-- npm scripts to run my build.
-- Plugging in Babel.
-- Setting up Redux. My experience with Redux has been adding connect to components and accessing state to populate a UI, but i've never built the state or plugged in Redux before.
-- Dummy Databases (where do i store the data for the orders? Firebase with API calls?) (JSON object full of data and on app start up initialize function to populate with data?).
-- Auto generating cards every 15 seconds `setInterval(function, timeInMillisecondsInteger)`.
+- [x] Gulp, writing a gulpfile and properly concatenating my files together.
+- [x] npm scripts to run my build.
+- [x] Plugging in Babel.
+- [x] Setting up Redux. My experience with Redux has been adding connect to components and accessing state to populate a UI, but i've never built the state or plugged in Redux before.
+- [ ] Dummy Databases (where do i store the data for the orders? Firebase with API calls?) (JSON object full of data and on app start up initialize function to populate with data?).
+- [ ] Auto generating cards every 15 seconds `setInterval(function, timeInMillisecondsInteger)`.
 
 
 ## Set Up The Stack
@@ -51,6 +53,7 @@ Good luck and let us know if you have any questions!
   - [x] Babel Plugin "transform-class-properties" (for static)
 - [x] Redux
   - [x] Babel Plugin "transform-object-rest-spread" (for spread operators)
+  - [x] redux-logger
 - [x] Babel
   - [x] Browserify
   - [x] Babelify
@@ -139,26 +142,52 @@ Good luck and let us know if you have any questions!
 - [x] Install Ramda.
 - [x] Import `values` from Ramda
 
-> (Why I installed watchify)
+> Ok, if i'm going to install all these dependencies, then i might as well learn how to set up a server that will watch for changes in the build. Watchify was recommended to me. Honestly this is the one dependency I wish I had set up from the onset. 
 
 - [x] Install watchify, chokidar & npm run all
 - [x] Set up a new set of scripts for watching builds
 - [x] Create a watch task in gulp
 
-> Moving tickets that are in the queue, into a completed list. This collection of completed tickets is a result of a computed function, filtering out tickets where completed is false.
+> Moving tickets that are in the queue, into a completed list. This collection of completed tickets is a result of a computed function, filtering out tickets where completed is false. Even though memoizing would reduce the frequency of computation, the downside is becomes stale and therefore I would also have to manage the freshness with more code. Additionally if I needed a third or fourth or fifth subcollection (i.e. a list of tickets that have a key of ASAP and a value of true.) the object would be repetitively stored across many many lists. Computing the subcollections (in this case on a state change) allows me to keep the subcollections organized without having the manage the subcollections manually.
 
-- [ ] Provide ticket with a UI that allows for a ticket to be marked as completed.
-  - [ ] Change connector to give access to two collections: queue & completed.
-  - [ ] Use Ramda's filter function to create the queue & completed values.
-  - [ ] Display the completed values in a new component.
-- [ ]
+- [x] Change connector to give access to two collections: queue & completed.
+- [x] Use Ramda's filter function to create the queue & completed values.
+- [x] Display the completed values in a new component.
+
+> When I passed dispatch through Expo to Tickets, got the error `Invalid prop 'dispatch' of type 'number' supplied to 'Ticket', expected 'function'. Check the render method of 'Expo'.` because i forgot the second position of the map function is the index.
+
+- [x] Curry the renderTicket & renderTickets functions so that dispatch can be passed along to Tickets component without messing up the call for the map function.
+- [x] Build the UI to mark change the state of a ticket from in the queue to completed.
+
+> If I were to iterate through and create a more production ready application, I would create a function that moves tickets out of state if their date is older than 24 hours.
+
+- [x] Refactor Expo to only display tickets that are in the subcollection onlyQueue, if session view is 'queue'.
+- [x] Add if condition to display tickets that are in the subcollection onlyCompleted, if session view is 'completed'.
+- [x] Set default session view to 'queue'.
+- [x] Create an action that signals the intent to view 'completed'.
+- [x] Create an action that signals the intent to view 'queue'.
+- [x] Create a new reducer that listens for this intent & changes session to 'completed'.
+- [x] Add to the new reducer, a case that listens for the intent to view 'queue' & changes session to 'queue'.
+- [x] Write a function `toggleView` to set the button in the header and toggle it's contents based on the current view.
+- [x] Write a function `onClickChangeView` to trigger the state change and toggle the button.
+
+> Ran into a problem with the toggleView button. To figure out what's happening I need to install redux-logger.
+
+- [x] Install redux-logger `npm i --save-dev redux-logger` in order to view state in the console.
+- [x] Add some flair & finally style a layout
+- [x] Flexbox the header & buttons
+- [x] Set global styles in the index.scss file so that I can control the general design with a single global attribute & so that my jsx file won't be too style heavy.
+- [x] Layout the ticket information.
+- [x] Create a simple jagged edge on the tickets so that they have a torn receipt paper nostalgia to them.
+- [x] Add white borders to the ticket info so that it is easier to visually locate the necessary information
+
+
 - [ ] Modal
-- [ ] Past Tickets
-- [ ]
-- [ ]
-- [ ]
-- [ ]
-- [ ]
+- [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth.
+- [ ] Auto Generating Tickets
+- [ ] ETA Time
+- [ ] Order Number concatenation
+- [ ] TESTS
 
 ## Assets I Could Use
 
