@@ -1,8 +1,51 @@
-// $primaryColor: #333333;
-// $secondaryColor: #001eff;
-// $headerColor: ;
-// $textColor: ;
+$primaryColor: #FF970F;
+$secondaryColor: #F24C00;
+$textColor: #5d5d5d;
+$loudTextColor: #FFFFFF;
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #F7717D;
+}
 
 h1 {
-  color: darkolivegreen;
+  font-family: "Futura", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2.2em;
+  color: $loudTextColor;
+}
+h2 {
+  font-family: "Futura", Helvetica, sans-serif;
+  font-size: 1.2em;
+}
+p {
+  color: $textColor;
+  font-family: "Andale Mono", AndaleMono, monospace;
+}
+button {
+  background-color: $primaryColor;
+  box-shadow: none;
+  border: none;
+  transition: all 0.2s;
+  font-family: "Futura", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+button:hover, button:active {
+  background-color: $secondaryColor;
+}
+ul {
+  padding: 0;
+  li {
+    list-style-type: none;
+  }
 }
