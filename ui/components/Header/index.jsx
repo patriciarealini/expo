@@ -3,7 +3,6 @@ import {connect} from "react-redux"
 import Radium from "radium"
 
 import {viewCompleted, viewQueued, openModal} from "../../actions/index.js"
-// import Modal from "./modal.jsx"
 
 const styles = {
   header: {
@@ -52,6 +51,7 @@ const toggleView = (view, dispatch) => {
 
 @Radium
 @connect((state) => {
+
   switch (state.help.open) {
     case "true": {
       return {
@@ -75,12 +75,6 @@ class Header extends Component {
     open: PropTypes.bool.isRequired,
     view: PropTypes.string
   }
-
-  // renderModal () {
-  //   return (
-  //     <Modal dispatch={this.props.dispatch} open={this.props.open}/>
-  //   )
-  // }
 
   render () {
     return (

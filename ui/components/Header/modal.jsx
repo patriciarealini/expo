@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from "react"
+import {connect} from "react-redux"
 import Radium from "radium"
 
 import {closeModal} from "../../actions/index.js"
@@ -15,7 +16,7 @@ const styles = {
     display: "flex",
     jusitfyContent: "center"
   },
-  button: {
+  modalButton: {
     flex: 1
   }
 }
@@ -25,21 +26,21 @@ const onClickChangeView = (action, dispatch) => () => {
 }
 
 @Radium
-// @connect((state) => {
-//   switch (state.help.open) {
-//     case "false": {
-//       return {
-//         open: state.help.open === false
-//       }
-//     }
-//     case "true":
-//     default: {
-//       return {
-//         open: state.help.open === true
-//       }
-//     }
-//   }
-// })
+@connect((state) => {
+  switch (state.help.open) {
+    case "false": {
+      return {
+        open: state.help.open === false
+      }
+    }
+    case "true":
+    default: {
+      return {
+        open: state.help.open === true
+      }
+    }
+  }
+})
 class Modal extends Component {
 
   static propTypes = {
@@ -48,7 +49,7 @@ class Modal extends Component {
   }
 
   renderModal (open) {
-    if (open === true) {
+    if (open) {
       return (
         <div style={styles.modal}>
           <h1>Help!</h1>
@@ -59,11 +60,11 @@ class Modal extends Component {
           </div>
         </div>
       )
-    }
+    } return null
   }
 
   render () {
-    return renderModal(this.props.open)
+    return this.renderModal(this.props.open)
   }
 }
 
