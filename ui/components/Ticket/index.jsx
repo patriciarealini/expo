@@ -68,9 +68,15 @@ class Ticket extends Component {
   }
 
   renderPickUpButton () {
-    if (!this.props.completed) {
+    const {
+      completed,
+      dispatch,
+      orderNumber
+    } = this.props
+
+    if (!completed) {
       return (
-        <button onClick={onClickCompleted(this.props.dispatch, this.props.orderNumber)} style={styles.pickUpButton}>
+        <button onClick={onClickCompleted(dispatch, orderNumber)} style={styles.pickUpButton}>
           Picked Up
         </button>
       )
@@ -79,28 +85,36 @@ class Ticket extends Component {
   }
 
   render () {
+    const {
+      courierETA,
+      courierName,
+      customerAddress,
+      customerName,
+      orderNumber
+    } = this.props
+
     return (
       <div style={styles.ticketContainer}>
         <div style={styles.ticket}>
           <ul style={styles.order}>
             <li style={styles.info}>Order #</li>
-            <li style={styles.details}>{this.props.orderNumber}</li>
+            <li style={styles.details}>{orderNumber}</li>
           </ul>
           <ul style={styles.order}>
             <li style={styles.info}>Customer</li>
-            <li style={styles.details}>{this.props.customerName}</li>
+            <li style={styles.details}>{customerName}</li>
           </ul>
           <ul style={styles.order}>
             <li style={styles.info}>Customer Address</li>
-            <li style={styles.details}>{this.props.customerAddress}</li>
+            <li style={styles.details}>{customerAddress}</li>
           </ul>
           <ul style={styles.order}>
             <li style={styles.info}>Courier</li>
-            <li style={styles.details}>{this.props.courierName}</li>
+            <li style={styles.details}>{courierName}</li>
           </ul>
           <ul style={styles.order}>
             <li style={styles.info}>Courier ETA</li>
-            <li style={styles.details}>{this.props.courierETA.toISOString()}</li>
+            <li style={styles.details}>{courierETA.toISOString()}</li>
           </ul>
           {this.renderPickUpButton()}
         </div>

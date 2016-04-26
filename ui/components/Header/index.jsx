@@ -51,7 +51,6 @@ const toggleView = (view, dispatch) => {
 
 @Radium
 @connect((state) => {
-
   switch (state.help.open) {
     case "true": {
       return {
@@ -77,11 +76,16 @@ class Header extends Component {
   }
 
   render () {
+    const {
+      dispatch,
+      view
+    } = this.props
+
     return (
       <div style={styles.header}>
         <h1 style={styles.heading}>Ando Expo</h1>
-        {toggleView(this.props.view, this.props.dispatch)}
-        <button onClick={onClickChangeView(openModal, this.props.dispatch)} style={styles.button}>
+        {toggleView(view, dispatch)}
+        <button onClick={onClickChangeView(openModal, dispatch)} style={styles.button}>
           Help!
         </button>
       </div>
