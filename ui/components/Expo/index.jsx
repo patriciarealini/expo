@@ -5,6 +5,7 @@ import Radium from "radium"
 
 import Ticket from "../Ticket/index.jsx"
 import Header from "../Header/index.jsx"
+import Modal from "../Modal/index.jsx"
 
 const styles = {
   expo: {
@@ -36,6 +37,7 @@ const renderTickets = (tickets, dispatch) => {
   const isQueued = whereEq({completed: false})
   const onlyQueued = filter(isQueued)
   const onlyCompleted = filter(isCompleted)
+  // const open = state.help.open
 
   switch (state.session.view) {
     case "completed": {
@@ -55,22 +57,26 @@ class Expo extends Component {
 
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
+    open: PropTypes.bool.isRequired,
     tickets: PropTypes.array.isRequired
   }
 
   static defaultProps = {
+    open: false,
     tickets: []
   }
 
   render () {
     const {
       dispatch,
+      open,
       tickets
     } = this.props
 
     return (
       <div>
-        <Header dispatch={dispatch} open={false} />
+        <Modal dispatch={dispatch} open={open} />
+        <Header dispatch={dispatch} open={open} />
         <section style={styles.expo}>
           {renderTickets(tickets, dispatch)}
         </section>
