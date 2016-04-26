@@ -21,17 +21,17 @@ export function getAllTickets () {
       3: {
         completed: false,
         courierETA: new Date(),
-        courierName: "John L. Hess",
-        customerAddress: "11 Madison Ave., New York, NY 10010",
-        customerName: "Daniel Humm",
+        courierName: "Bryan Miller",
+        customerAddress: "10 Columbus Cir., New York, NY 10019",
+        customerName: "Thomas Keller",
         orderNumber: 3
       },
       4: {
         completed: false,
         courierETA: new Date(),
-        courierName: "Bryan Miller",
-        customerAddress: "10 Columbus Cir., New York, NY 10019",
-        customerName: "Thomas Keller",
+        courierName: "Craig Claiborne",
+        customerAddress: "179 E Houston St., New York, NY 10002",
+        customerName: "Joel Russ",
         orderNumber: 4
       },
       5: {
@@ -45,9 +45,9 @@ export function getAllTickets () {
       6: {
         completed: false,
         courierETA: new Date(),
-        courierName: "Craig Claiborne",
-        customerAddress: "179 E Houston St., New York, NY 10002",
-        customerName: "Joel Russ",
+        courierName: "John L. Hess",
+        customerAddress: "11 Madison Ave., New York, NY 10010",
+        customerName: "Daniel Humm",
         orderNumber: 6
       },
       7: {
