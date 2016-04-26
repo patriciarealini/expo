@@ -204,7 +204,7 @@ Ran into a problem with the toggleView button. To figure out what's happening I 
 - [ ] TESTS
 - [ ] Order Number concatenation
 - [ ] TESTS
-- [ ] Refactor `ui/index.jsx` it's not really needed since expo is now the app. 
+- [ ] Refactor `ui/index.jsx` it's redundant since expo is now the app.
 
 
 ## Assets I Could Use
