@@ -192,9 +192,9 @@ Ran into a problem with the toggleView button. To figure out what's happening I 
 - [x] Create a new reducer to listen for openModal & closeModal and change state.help.open based on the action.
 - [x] Create a new connect switch statement to handle changing state.help.open from false to true when clicking the Help button in the Header.
 - [x] Set up the No button in the modal to handle changing state.help.open to false
-- [ ] Display Modal when `open: true`
+- [x] Display Modal when `open: true`
+- [ ] Style Modal
 
-- [ ] Modal
 - [ ] TESTS
 - [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth.
 - [ ] TESTS

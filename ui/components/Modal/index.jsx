@@ -7,10 +7,13 @@ import {closeModal} from "../../actions/index.js"
 const styles = {
   modal: {
     display: "block",
-    position: "absolute",
-    width: "100vw",
-    height: "100vh",
-    background: "#5d5d5d"
+    position: "fixed",
+    width: "100%",
+    height: "100%",
+    left: 0,
+    top: 0,
+    background: "rgba(93,93,93, 0.7)",
+    zIndex: 100
   },
   selection: {
     display: "flex",

@@ -10,7 +10,8 @@ const styles = {
     width: "100vw",
     height: 125,
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    zIndex: 0
   },
   heading: {
     flex: 1,
