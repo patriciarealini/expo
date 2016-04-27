@@ -194,9 +194,12 @@ Ran into a problem with the toggleView button. To figure out what's happening I 
 - [x] Set up the No button in the modal to handle changing state.help.open to false
 - [x] Display Modal when `open: true`
 - [x] Style Modal
+- [ ] write tests for redux actions
+- [ ] write tests for redux reducers
+- [ ] write tests for the ticket component
 
 - [ ] TESTS
-- [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth.
+- [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth. (on change to `state.session.view`)
 - [ ] TESTS
 - [ ] Auto Generating Tickets
 - [ ] TESTS
