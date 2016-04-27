@@ -6,7 +6,9 @@ import {closeModal} from "../../actions/index.js"
 
 const styles = {
   modal: {
-    display: "block",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     position: "fixed",
     width: "100%",
     height: "100%",
@@ -15,12 +17,30 @@ const styles = {
     background: "rgba(93,93,93, 0.7)",
     zIndex: 100
   },
+  overlay: {
+    background: "#FFFFFF",
+    width: "75%",
+    height: "50%"
+  },
+  modalHeader: {
+    color: "#F7717D",
+    textAlign: "center",
+    margin: "50px 0 20px 0"
+  },
+  modalContent: {
+    textAlign: "center",
+    margin: "40px 0"
+  },
   selection: {
     display: "flex",
-    jusitfyContent: "center"
+    justifyContent: "space-around",
+    width: "60%",
+    margin: "0 auto"
   },
   modalButton: {
-    flex: 1
+    width: 90,
+    height: 60,
+    margin: "5px 5px 5px 0"
   }
 }
 
@@ -55,11 +75,13 @@ class Modal extends Component {
     if (open) {
       return (
         <div style={styles.modal}>
-          <h1>Help!</h1>
-          <p>Are you sure you want to close the kitchen?</p>
-          <div style={styles.selection}>
-            <button style={styles.button}>Yes</button>
-            <button onClick={onClickChangeView(closeModal, this.props.dispatch)} style={styles.button}>No</button>
+          <div style={styles.overlay}>
+            <h1 style={styles.modalHeader}>Help!</h1>
+            <p style={styles.modalContent}>Are you sure you want to close the kitchen?</p>
+            <div style={styles.selection}>
+              <button style={styles.modalButton}>Yes</button>
+              <button onClick={onClickChangeView(closeModal, this.props.dispatch)} style={styles.modalButton}>No</button>
+            </div>
           </div>
         </div>
       )
