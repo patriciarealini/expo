@@ -19,7 +19,7 @@ const styles = {
   },
   overlay: {
     background: "#FFFFFF",
-    width: "75%",
+    width: "60%",
     height: "50%"
   },
   modalHeader: {
@@ -38,6 +38,7 @@ const styles = {
     margin: "0 auto"
   },
   modalButton: {
+    color: "#FFFFFF",
     width: 90,
     height: 60,
     margin: "5px 5px 5px 0"
