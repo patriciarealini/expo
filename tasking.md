@@ -193,7 +193,7 @@ Ran into a problem with the toggleView button. To figure out what's happening I 
 - [x] Create a new connect switch statement to handle changing state.help.open from false to true when clicking the Help button in the Header.
 - [x] Set up the No button in the modal to handle changing state.help.open to false
 - [x] Display Modal when `open: true`
-- [ ] Style Modal
+- [x] Style Modal
 
 - [ ] TESTS
 - [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth.
@@ -204,6 +204,7 @@ Ran into a problem with the toggleView button. To figure out what's happening I 
 - [ ] TESTS
 - [ ] Order Number concatenation
 - [ ] TESTS
+- [ ] Refactor Modal into a reusable component. Set up props to pass h1, p and the reducers for Yes & No buttons.
 - [ ] Refactor `ui/index.jsx` it's redundant since expo is now the app.
 
 
