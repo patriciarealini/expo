@@ -37,7 +37,6 @@ const renderTickets = (tickets, dispatch) => {
   const isQueued = whereEq({completed: false})
   const onlyQueued = filter(isQueued)
   const onlyCompleted = filter(isCompleted)
-  // const open = state.help.open
 
   switch (state.session.view) {
     case "completed": {
