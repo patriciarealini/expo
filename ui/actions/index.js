@@ -1,10 +1,15 @@
-export function getAllTickets () {
+import {date} from "faker"
+import moment from "moment"
+
+const randomMinutes = () => Math.floor(Math.random() * 59 + 1)
+
+export function getAllTickets() {
   return {
     type: "RECEIVE_TICKETS",
     tickets: {
       1: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "Ruth Reichl",
         customerAddress: "80 Spring St., New York, NY 10012",
         customerName: "Keith McNally",
@@ -12,7 +17,7 @@ export function getAllTickets () {
       },
       2: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "Pete Wells",
         customerAddress: "171 East Broadway, New York, NY 10002",
         customerName: "Danny Bowien",
@@ -20,7 +25,7 @@ export function getAllTickets () {
       },
       3: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "Bryan Miller",
         customerAddress: "10 Columbus Cir., New York, NY 10019",
         customerName: "Thomas Keller",
@@ -28,7 +33,7 @@ export function getAllTickets () {
       },
       4: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "Craig Claiborne",
         customerAddress: "179 E Houston St., New York, NY 10002",
         customerName: "Joel Russ",
@@ -36,7 +41,7 @@ export function getAllTickets () {
       },
       5: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "Peter Meehan",
         customerAddress: "175 Avenue B, New York, NY 10009",
         customerName: "Ruth Krishna",
@@ -44,7 +49,7 @@ export function getAllTickets () {
       },
       6: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "John L. Hess",
         customerAddress: "11 Madison Ave., New York, NY 10010",
         customerName: "Daniel Humm",
@@ -52,7 +57,7 @@ export function getAllTickets () {
       },
       7: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "Frank Bruni",
         customerAddress: "54 East 1st St., New York, NY 10003",
         customerName: "Gabrielle Hamilton",
@@ -60,7 +65,7 @@ export function getAllTickets () {
       },
       8: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "Mimi Sheraton",
         customerAddress: "60 E 65th St., New York, NY 10065",
         customerName: "Daniel Boulud",
@@ -68,7 +73,7 @@ export function getAllTickets () {
       },
       9: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "William Grimes",
         customerAddress: "43 E 19th St., New York, NY 10003",
         customerName: "Tom Colicchio",
@@ -76,7 +81,7 @@ export function getAllTickets () {
       },
       10: {
         completed: false,
-        courierETA: new Date(),
+        courierETA: date.between(new Date(), moment().add(randomMinutes(), "minutes")),
         courierName: "Sam Sifton",
         customerAddress: "382 Metropolitan Ave., Brooklyn, NY 11211",
         customerName: "Christina Tosi",
@@ -109,5 +114,10 @@ export function openModal () {
 export function closeModal () {
   return {
     type: "CLOSE_MODAL"
+  }
+}
+export function newTicket () {
+  return {
+    type: "NEW_TICKET"
   }
 }
