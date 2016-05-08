@@ -13,7 +13,6 @@ const logger = createLogger()
 const store = createStore(reducers, applyMiddleware(thunk, logger))
 
 store.dispatch(getAllTickets())
-// store.dispatch(newTicket())
 setInterval(() => store.dispatch(fetchTicket()), 15000)
 
 ReactDOM.render(
