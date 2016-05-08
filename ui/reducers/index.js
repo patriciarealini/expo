@@ -45,6 +45,12 @@ function session (state = initialState, action) {
         view: "queued"
       }
     }
+    case "CLOSE_KITCHEN": {
+      return {
+        ...state,
+        off: true
+      }
+    }
     default: {
       return state
     }
