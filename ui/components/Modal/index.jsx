@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from "react"
 import {connect} from "react-redux"
 import Radium from "radium"
 
-import {closeModal} from "../../actions/index.js"
+import {closeKitchen, closeModal} from "../../actions/index.js"
 
 const styles = {
   modal: {
@@ -48,6 +48,10 @@ const styles = {
 const onClickChangeView = (action, dispatch) => () => {
   dispatch(action())
 }
+const onClickCloseKitchen = (dispatch) => () => {
+  dispatch(closeKitchen())
+  dispatch(closeModal())
+}
 
 @Radium
 @connect((state) => {
@@ -80,7 +84,7 @@ class Modal extends Component {
             <h1 style={styles.modalHeader}>Help!</h1>
             <p style={styles.modalContent}>Are you sure you want to close the kitchen?</p>
             <div style={styles.selection}>
-              <button style={styles.modalButton}>Yes</button>
+              <button onClick={onClickCloseKitchen(this.props.dispatch)} style={styles.modalButton}>Yes</button>
               <button onClick={onClickChangeView(closeModal, this.props.dispatch)} style={styles.modalButton}>No</button>
             </div>
           </div>
