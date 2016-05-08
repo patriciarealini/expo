@@ -1,6 +1,8 @@
 import React, {Component, PropTypes} from "react"
 import Radium from "radium"
 
+import moment from "moment"
+
 import {markTicketCompleted} from "../../actions/index.js"
 
 const styles = {
@@ -13,8 +15,10 @@ const styles = {
     alignItems: "flex-start",
     width: 350,
     backgroundColor: "#FFDF0F",
-    border: "4px white",
-    borderStyle: "dotted solid",
+    borderTop: "4px dotted white",
+    borderRight: "4px solid white",
+    borderBottom: "4px dotted white",
+    borderLeft: "4px solid white",
     margin: "10px 5px",
     paddingTop: 30
   },
@@ -64,7 +68,12 @@ class Ticket extends Component {
     customerAddress: PropTypes.string.isRequired,
     customerName: PropTypes.string.isRequired,
     dispatch: PropTypes.func.isRequired,
-    orderNumber: PropTypes.number.isRequired
+    orderNumber: PropTypes.number.isRequired,
+    updatedAt: PropTypes.instanceOf(Date).isRequired
+  }
+
+  shouldComponentUpdate (nextProps) {
+    return this.props.updatedAt !== nextProps.updatedAt
   }
 
   renderPickUpButton () {
@@ -114,7 +123,7 @@ class Ticket extends Component {
           </ul>
           <ul style={styles.order}>
             <li style={styles.info}>Courier ETA</li>
-            <li style={styles.details}>{courierETA.toISOString()}</li>
+            <li style={styles.details}>{moment(courierETA).format("MMM D YYYY, HH:mm")}</li>
           </ul>
           {this.renderPickUpButton()}
         </div>
