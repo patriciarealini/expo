@@ -49,8 +49,7 @@ Good luck and let us know if you have any questions!
 - [x] npm scripts to run my build.
 - [x] Plugging in Babel.
 - [x] Setting up Redux. My experience with Redux has been adding connect to components and accessing state to populate a UI, but i've never built the state or plugged in Redux before.
-- [ ] Dummy Databases (where do i store the data for the orders? Firebase with API calls?) (JSON object full of data and on app start up initialize function to populate with data?).
-- [ ] Auto generating cards every 15 seconds `setInterval(function, timeInMillisecondsInteger)`.
+- [x] Auto generating cards every 15 seconds `setInterval(function, timeInMillisecondsInteger)`.
 
 
 ## Set Up The Stack
@@ -103,7 +102,7 @@ I had been encouraged to set up this project to build by sourcing CDN from the i
 - [x] Set up browserify with an npm script to build
 - [x] Set up babelify with browserify
 
-Reached a point in my iteration where it was appropriate to start destructuring my components and using Gulp to concatenate my work for me.
+Reached a point in my iteration where it was appropriate to start de-structuring my components and using Gulp to concatenate my work for me.
 
 - [x] Make Gulp copy over `ui/index.html` to `tmp/index.html`.
 - [x] Make Hapi point to the Gulp output in temp/ instead of `ui/index.html`.
