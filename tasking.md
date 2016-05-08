@@ -64,6 +64,7 @@ Good luck and let us know if you have any questions!
 - [x] Redux
   - [x] Babel Plugin "transform-object-rest-spread" (for spread operators)
   - [x] redux-logger
+  - [x] redux-thunk
 - [x] Babel
   - [x] Browserify
   - [x] Babelify
@@ -82,6 +83,8 @@ Good luck and let us know if you have any questions!
 - [x] Watchify
   - [x] Chokidar
   - [x] npm run all
+- [x] Faker
+- [x] Moment
 
 > Because I haven't put together my own build before (but i've been learning about how to do it and excited i get to finally do it) I decided to put together a [boilerplate build](https://github.com/patriciarealini/jsboilerplate) alongside my work for this project. This way I can implement this work in this future on my other personal projects 🎉.  
 
@@ -194,21 +197,37 @@ Ran into a problem with the toggleView button. To figure out what's happening I 
 - [x] Set up the No button in the modal to handle changing state.help.open to false
 - [x] Display Modal when `open: true`
 - [x] Style Modal
-- [ ] write tests for redux actions
-- [ ] write tests for redux reducers
-- [ ] write tests for the ticket component
+
+Now in order to auto-generate tickets – as much as I would like to continue using Chefs & their famous restaurant addresses as Customers information & NYT food critics as Couriers – I need to utilize a random data generator to auto-generate tickets. While I'm working with the Ticket object, I might as well format & generate the ETA data using moment.js.  
+
+- [x] npm install faker & moment for randomly generated data for the tickets.
+- [x] New redux action NEW_TICKET.
+- [x] New redux reducer in tickets function that appends a new ticket with random data to state.
+
+To mimic a client to API relationship, i decided to set up the new ticket generation in the action creator, using redux-thunk to get state.
+
+- [x] npm install redux-thunk to access state in the action creator.
+- [x] Write newTicket action to provide a new key and object with Ticket values.
+- [x] Write new case in tickets reducer to append the new key and Ticket object to state.
+- [x] Write noTicket action
+- [x] Refactor newTicket logic into fetchTicket and set up with an if statement to determine whether fetchTicket should return noTicket or a newTicket.
+- [x] Refactor newTicket reducer. There is no need for a noTicket reducer since it returns no UI.
+- [x] Add updatedAt to Ticket's props & values.
+- [x] Refactor Ticket to only re-render UI shouldComponentUpdate.
+- [ ] Write tests for reducers.
+- [ ] Write tests for actions.
+- [ ] Write tests for the Ticket component.
+- [ ] Write tests for the Expo component.
+- [ ] Write tests for the Modal component.
+
 
 - [ ] TESTS
 - [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth. (on change to `state.session.view`)
 - [ ] TESTS
-- [ ] Auto Generating Tickets
-- [ ] TESTS
-- [ ] ETA Time
-- [ ] TESTS
 - [ ] Order Number concatenation
 - [ ] TESTS
 - [ ] Refactor Modal into a reusable component. Set up props to pass h1, p and the reducers for Yes & No buttons.
-- [ ] Refactor `ui/index.jsx` it's redundant since expo is now the app.
+- [ ] Set up Help Modal to change when state.session.off is true to provide the option to open the kitchen again, thus re-enabling newTicket.
 
 
 ## Assets I Could Use
