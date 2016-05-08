@@ -116,7 +116,7 @@ export function noTicket () {
 export function fetchTicket () {
   return (dispatch, getState) => {
     if (getState().session.off) {
-      dispatch(noTicket())
+      return dispatch(noTicket())
     }
     const id = keys(getState().tickets).length + 1
     const ticket = {
@@ -128,7 +128,7 @@ export function fetchTicket () {
       orderNumber: id,
       updatedAt: new Date()
     }
-    dispatch(newTicket(ticket))
+    return dispatch(newTicket(ticket))
   }
 }
 export function markTicketCompleted (id) {
@@ -155,5 +155,10 @@ export function openModal () {
 export function closeModal () {
   return {
     type: "CLOSE_MODAL"
+  }
+}
+export function closeKitchen () {
+  return {
+    type: "CLOSE_KITCHEN"
   }
 }
