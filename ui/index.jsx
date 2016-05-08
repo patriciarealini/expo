@@ -3,15 +3,18 @@ import ReactDOM from "react-dom"
 import {Provider} from "react-redux"
 import {applyMiddleware, createStore} from "redux"
 import createLogger from "redux-logger"
+import thunk from 'redux-thunk'
 
-import {getAllTickets} from "./actions/index.js"
+import {getAllTickets, fetchTicket} from "./actions/index.js"
 import reducers from "./reducers/index.js"
 import {Expo} from "./components/index.jsx"
 
 const logger = createLogger()
-const store = createStore(reducers, applyMiddleware(logger))
+const store = createStore(reducers, applyMiddleware(thunk, logger))
 
 store.dispatch(getAllTickets())
+// store.dispatch(newTicket())
+setInterval(() => store.dispatch(fetchTicket()), 15000)
 
 ReactDOM.render(
   <div>
