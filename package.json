@@ -8,7 +8,7 @@
     "build:assets": "gulp",
     "build:ui": "mkdir -p './tmp/' && browserify --transform babelify --entry './ui/index.jsx' --outfile './tmp/index.js'",
     "lint": "eslint './ui/'",
-    "test": "mocha --compilers js:babel-register",
+    "test": "mocha --compilers js:babel-register './ui/**/test.js'",
     "start": "node app/index.js",
     "watch": "npm-run-all --parallel watch:build watch:lint watch:test start",
     "watch:build": "mkdir -p './tmp/' && npm-run-all --parallel watch:build:ui watch:build:assets",
