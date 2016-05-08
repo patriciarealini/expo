@@ -23,7 +23,8 @@ const renderTicket = (dispatch) => (ticket) => {
       courierName={ticket.courierName}
       customerAddress={ticket.customerAddress}
       customerName={ticket.customerName}
-      orderNumber={ticket.orderNumber} />
+      orderNumber={ticket.orderNumber}
+      updatedAt={ticket.updatedAt} />
   )
 }
 
