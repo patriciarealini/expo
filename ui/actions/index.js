@@ -2,7 +2,7 @@ import {keys} from "ramda"
 import {name, address, date} from "faker"
 import moment from "moment"
 
-const randomMinutes = () => Math.floor(Math.random() * (59) + 1)
+const randomMinutes = () => Math.floor(Math.random() * (30) + 1)
 const newETA = () => date.between(new Date(), moment().add(randomMinutes(), "m"))
 
 export function getAllTickets() {
