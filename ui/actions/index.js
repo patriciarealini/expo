@@ -2,10 +2,10 @@ import {keys} from "ramda"
 import {name, address, date} from "faker"
 import moment from "moment"
 
-const randomMinutes = () => Math.floor(Math.random() * (30) + 1)
+const randomMinutes = () => Math.floor(Math.random() * 30 + 1)
 const newETA = () => date.between(new Date(), moment().add(randomMinutes(), "m"))
 
-export function getAllTickets() {
+export function getAllTickets () {
   return {
     type: "RECEIVE_TICKETS",
     tickets: {
@@ -119,6 +119,7 @@ export function fetchTicket () {
       return dispatch(noTicket())
     }
     const id = keys(getState().tickets).length + 1
+
     const ticket = {
       completed: false,
       courierETA: newETA(),
@@ -128,6 +129,7 @@ export function fetchTicket () {
       orderNumber: id,
       updatedAt: new Date()
     }
+
     return dispatch(newTicket(ticket))
   }
 }
