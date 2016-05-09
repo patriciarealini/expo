@@ -29,19 +29,22 @@ Specifically we are looking for:
 Good luck and let us know if you have any questions!
 
 
-#### Breaking Down the Problem
+#### Personal Notes on Functionality & Execution
 
 - A header with a Help button, that when clicked reveals a modal.
+  - In the future I would refactor Modal into a reusable component. Set up props to pass h1, p and the reducers for Yes & No buttons.
+  - In the future I would set up Help Modal to change when state.session.off is true to provide the option to open the kitchen again, thus re-enabling newTicket.
 - Expo to hold the "tickets".
   - To emulate an expo's expectations for the layout of tickets, tickets should be presented in a row. The queue will begin on the left hand side of the screen and come in on the right hand side of the screen.
   - The Expo should display a partial ticket on the far end so that the user develops an expectation that there are more tickets out of the view and that to access them they can scroll horizontally.
   - In the future, I think it would be interesting to a/b test a layout where the second to last ticket becomes a "stack" of tickets when there are more tickets than the screen has space to display. When an expediter would like to view the full set of tickets, they can tap on the bottom edge of the stack of tickets and the tickets will spread out and the screen will be scrollable.
-  - I am also concerned about what kind of visual cue can be set up to alert the expediter that there is a new ticket. Perhaps have new tickets glow a certain color and then fade into the main color for a span of 2 seconds.
+  - I am also concerned about what kind of cue can be set up to alert the expediter that there is a new ticket. If i were to use a visual cue, perhaps having new tickets glow a certain color and then fade into the main color for a span of 2 seconds. If I were to use an audible cue, a notification ping would be most effective.
 - Cards to hold the order details.
   - Cards should have a button to mark as completed/picked up. In future iterations I would like to have a button in the nav bar or in the footer that takes you to a display of completed orders.
   - It would be user friendly to provide the pickup ETA with a timer that counts down to that time next to it. This is something I would definitely want to implement in the future.
   - Additionally, it would be clever to change the background color of tickets to red to indicate when they are overdue.
   - It would be cool to use CSS Transitions or some animation to flip the cards to reveal the contents of the order.
+
 
 #### Things I Need To Learn To Do
 
@@ -219,10 +222,8 @@ To mimic a client to API relationship, i decided to set up the new ticket genera
 - [ ] Write tests for the Ticket component.
 - [ ] Write tests for the Expo component.
 - [ ] Write tests for the Modal component.
-- [ ] TESTS
+- [ ] Just more tests. Always more tests.
 - [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth. (on change to `state.session.view`)
-- [ ] Refactor Modal into a reusable component. Set up props to pass h1, p and the reducers for Yes & No buttons.
-- [ ] Set up Help Modal to change when state.session.off is true to provide the option to open the kitchen again, thus re-enabling newTicket.
 
 
 ## Assets I Could Use
