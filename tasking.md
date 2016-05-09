@@ -213,18 +213,14 @@ To mimic a client to API relationship, i decided to set up the new ticket genera
 - [x] Refactor newTicket reducer. There is no need for a noTicket reducer since it returns no UI.
 - [x] Add updatedAt to Ticket's props & values.
 - [x] Refactor Ticket to only re-render UI shouldComponentUpdate.
+- [x] Fix order numbers so they render the order number preceded by enough 0's to have 4 digits
 - [ ] Write tests for reducers.
 - [ ] Write tests for actions.
 - [ ] Write tests for the Ticket component.
 - [ ] Write tests for the Expo component.
 - [ ] Write tests for the Modal component.
-
-
 - [ ] TESTS
 - [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth. (on change to `state.session.view`)
-- [ ] TESTS
-- [ ] Order Number concatenation
-- [ ] TESTS
 - [ ] Refactor Modal into a reusable component. Set up props to pass h1, p and the reducers for Yes & No buttons.
 - [ ] Set up Help Modal to change when state.session.off is true to provide the option to open the kitchen again, thus re-enabling newTicket.
 
