@@ -76,6 +76,19 @@ class Ticket extends Component {
     return this.props.updatedAt !== nextProps.updatedAt
   }
 
+  renderOrderNumber (orderNumber) {
+    const number = orderNumber.toString()
+
+    if (number.length === 1) {
+      return `000${number}`
+    } else if (number.length === 2) {
+      return `00${number}`
+    } else if (number.length === 3) {
+      return `0${number}`
+    }
+    return orderNumber
+  }
+
   renderPickUpButton () {
     const {
       completed,
@@ -107,7 +120,7 @@ class Ticket extends Component {
         <div style={styles.ticket}>
           <ul style={styles.order}>
             <li style={styles.info}>Order #</li>
-            <li style={styles.details}>{orderNumber}</li>
+            <li style={styles.details}>{this.renderOrderNumber(orderNumber)}</li>
           </ul>
           <ul style={styles.order}>
             <li style={styles.info}>Customer</li>
