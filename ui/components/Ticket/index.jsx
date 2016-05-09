@@ -79,14 +79,7 @@ class Ticket extends Component {
   renderOrderNumber (orderNumber) {
     const number = orderNumber.toString()
 
-    if (number.length === 1) {
-      return `000${number}`
-    } else if (number.length === 2) {
-      return `00${number}`
-    } else if (number.length === 3) {
-      return `0${number}`
-    }
-    return orderNumber
+    return Array(Math.max(0, 5 - number.length)).join('0') + number;
   }
 
   renderPickUpButton () {
