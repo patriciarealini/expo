@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from "react"
 import Radium from "radium"
-
 import moment from "moment"
 
 import {markTicketCompleted} from "../../actions/index.js"
