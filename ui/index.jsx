@@ -21,5 +21,5 @@ ReactDOM.render(
       <Expo dispatch={store.dispatch}/>
     </Provider>
   </div>,
-  document.getElementById("ando")
+  document.getElementById("expo")
 )

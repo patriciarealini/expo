@@ -1,6 +1,6 @@
 # Tasking
 
-## ￼Ando Code Assignment
+##  Code Assignment
 
 The Problem:
 
@@ -224,9 +224,3 @@ To mimic a client to API relationship, i decided to set up the new ticket genera
 - [ ] Write tests for the Modal component.
 - [ ] Just more tests. Always more tests.
 - [ ] Add React CSSTransitionGroup to components so that changes in state can be smooth. (on change to `state.session.view`)
-
-
-## Assets I Could Use
-
-- [Momofuku Favicon](https://momofuku.com/app/themes/momofuku/favicon.ico)
-- [Ando Favicon](https://static.andofood.com/graphics/favicon.png)

@@ -84,7 +84,7 @@ class Header extends Component {
 
     return (
       <div style={styles.header}>
-        <h1 style={styles.heading}>Ando Expo</h1>
+        <h1 style={styles.heading}>Expo</h1>
         {toggleView(view, dispatch)}
         <button onClick={onClickChangeView(openModal, dispatch)} style={styles.button}>
           Help!

@@ -1,7 +1,7 @@
 {
-  "name": "ando",
+  "name": "expo",
   "version": "1.0.0",
-  "description": "take home assignment for Ando",
+  "description": "personal project",
   "main": "index.js",
   "scripts": {
     "build": "npm run build:assets && npm run build:ui",
@@ -22,7 +22,6 @@
     "url": ""
   },
   "keywords": [
-    "ando"
   ],
   "author": "patricia realini",
   "license": "UNLICENSED",

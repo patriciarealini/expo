@@ -1,7 +1,15 @@
-const Chai = require("chai")
+import {describe, it} from "mocha"
+import {assert, expect} from "chai"
+import closeModal from "./index.js"
 
-import actions from "./index.js"
+describe("ui/actions", () => {
+  // describe("closeModal()", () => {
+  //   it("", () => {
+  //     expect().to.deep.equal({
+  //       type: "CLOSE_MODAL"
+  //     })
+  //   })
+  // })
+})
 
-const assert = Chai.assert
-const expect = Chai.expect
-const should = Chai.should()
+// fake state, give it an action, match the action

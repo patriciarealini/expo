@@ -1,33 +1,6 @@
 # READ ME
 
-## ￼Ando Code Assignment
-
-The Problem:
-
-You are in the kitchen sitting next to Alyssa, our friendly kitchen expediter. Her role is to take packed orders and make sure they get picked up by the right delivery courier. She’s currently got 3 screens she’s using to see all the information she needs to do her job. Your job is to help make her life easier!
-
-Using React, create a simple Node.js prototype app that serves a single page with cards representing orders. The card should have:
-
-- The order number (like ‘0001’, ‘0002’, etc)
-- The name of the customer
-- The address of the customer
-- The name of the courier
-- The pickup ETA
-
-The card should also have a button to mark it as “picked up”, at which point it should exit the screen in a graceful way.
-Cards should be auto­generated every 15 seconds and appear on the page. Generate them however you’d like!
-
-There should be a “Help!” button at the top of the screen that can be pressed to bring up a confirmation modal that will say, “Are you sure you want to close the kitchen?”, at which point orders will no longer appear automatically.
-
-How you setup your project is completely up to you, though we recommend using gulp to pre­process your React JSX files to include on the page.
-
-Specifically we are looking for:
-- Easy to read code
-- Good modularization of different UI elements
-- Knowledge of React and (minor) knowledge of Node.js
-
-Good luck and let us know if you have any questions!
-
+Expo, a nickname for the expeditor, is a position in a restaurant kitchen (aka back-of-the-house aka BoH) whose job it is to organize the firing of orders for food & make sure they get sent to the right table. In this case, the expo's job is to make sure orders get delivered by the right courier to the right address. This project was built with the intention to demonstrate my skills with React, Redux, ES6, Babel, Gulp and CSS and to learn more about the basics of Node and npm. For more detail on the process I used (quite a lot of detail honestly), please refer to github.com/patriciarealini/expo/tasking.md.
 
 ## Getting Started
 
