@@ -4,7 +4,11 @@ Expo, a nickname for the expeditor, is a position in a restaurant kitchen (aka b
 
 ## Getting Started
 
+This app requires an ES6 compatible version of Node.
+
 Run `npm install`.
+
+The first time you clone the repo, you'll also need to build the app with `npm run build`.
 
 ## Run Development
 
